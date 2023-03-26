@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Image Viewer</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type = "text/javascript" src="script.js"> </script>
+</head>
+<body onload="initImages();">
+    <div class="image-previews" id="img-container">
+    </div>
+    <div class="image-viewer">
+        <div class="butt like">
+        <i class="fa fa-thumbs-up" id="like" onclick="alert('You like this image!')"></i>
+        </div>
+        <img class="big-img" id="big-img" alt="Image Viewer">
+        <div class="butt dislike">
+            <i class="fa fa-thumbs-up" id="dislike" onclick="alert('You dislike this image :((')"></i>
+        </div>
+    </div>
+</body>
+</html>
