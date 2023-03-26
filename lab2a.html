@@ -1,0 +1,103 @@
+<!-- 12. Write a web page with a squared box built using 4 lines (which are divs). Each line/div should be fully transparent at the edges (i.e. the corners of the box are transparent). -->
+<!-- Write a web page which contains a ball (rounded shape, do not use an image for this) on top of the page. When the mouse is over the ball, it should drop to the bottom of the page and keep jumping continuously. -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lab 2</title>
+<style>
+.square {
+    width: 3vmin;
+    height: 3vmin;
+    background-color: #ff2e3b;
+    position: absolute;
+}
+
+#top {
+    width: 30vmin;
+    top: 15vmin;
+    left: 18vmin;
+}
+#bottom {
+    width: 30vmin;
+    top: 48vmin;
+    left: 18vmin;
+    
+}
+#left {
+    height: 30vmin;
+    top: 18vmin;
+    left: 15vmin;
+}
+#right {
+    height: 30vmin;
+    top: 18vmin;
+    left: 48vmin;
+}
+
+.ball {
+    width: 20vh;
+    height: 20vh;
+    background-color: #4e4bff;
+    border-radius: 50%;
+    position: static;
+    top: 10vh;
+    left: 70vw;
+
+    animation: bounce 0.35s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+    animation-timing-function: cubic-bezier(.38,-0.01,.67,.26);
+    /* animation-timing-function: linear; */
+}
+
+.ballhitbox {
+    width: 20vh;
+    height: 20vh;
+    background-color: #0000;
+    position: absolute;
+    margin-top: 10vh;
+    margin-left: 70vw;
+    /* top: 10%;
+    left: 70%; */
+}
+
+@keyframes bounce {
+  from { transform: translate(0, 0);     }
+  to   { transform: translate(0, 70vh); }
+}
+
+.ballhitbox:hover  {
+    display: block;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+.ballhitbox:hover .ball {
+    position: absolute;
+    top: 10vh;
+    left: 70vw;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+}
+
+</style>
+<body>
+    <div class="square" id="top"></div>
+    <div class="square" id="bottom"></div>
+    <div class="square" id="left"></div>
+    <div class="square" id="right"></div>
+
+    <div class="ballhitbox" id="ball">
+        <div class="ball" id="ball"></div>
+    </div>
+</body>
+
+
+
+
+</html>

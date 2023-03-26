@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bouncing Ball</title>
+  <style>
+    .ball {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: red;
+      animation-name: bounce;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-timing-function: ease-in-out;
+    }
+
+    .ball.animate {
+      animation-play-state: running;
+    }
+
+    .ball {
+      animation-play-state: paused;
+      animation-fill-mode: forwards;
+      top: calc(100vh - 50px);
+    }
+
+    @keyframes bounce {
+      from { top: 0; }
+      to { top: calc(100vh - 50px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="ball"></div>
+
+  <script>
+    var ball = document.querySelector(".ball");
+    ball.addEventListener("mouseover", function() {
+      ball.classList.add("animate");
+    });
+  </script>
+</body>
+</html>
