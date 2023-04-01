@@ -1,0 +1,56 @@
+body {
+    background-color: #000;
+    color: #0f0;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2em;
+    color: #0f0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes wordcolors {
+    /* from {color: #f00;}
+    to {color: #00f;} */
+    from {color: #af0;}
+    to {color: #0f5;}
+}
+
+@keyframes h-wordcolors {
+    /* from {color: #f00;}
+    to {color: #00f;} */
+    from {color: #000;}
+    to {color: #333;}
+}
+
+.text {
+    line-height: 1.5;
+}
+
+.word {
+    background-color: #fff0;
+    color: #0f0;
+    font-size: large;
+    border-radius: 3px;
+
+    animation-name: wordcolors;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.word:hover:not(.highlighted):not(.punctuation) {
+    background-color: #fff3;
+}
+
+.highlighted {
+    background-color: white;
+    color: black;
+    animation-name: h-wordcolors;
+}
+
